@@ -10,7 +10,7 @@ src = os.path.join(os.path.expanduser("~"), "data/prod/")
 dest = os.path.join(os.path.expanduser("~"), "data/prod_backup/")
 
 def sync_folder(subdir):
- subprocess.call(["rsync", "-arq",os.path.join(src, subdir), o$
+ subprocess.call(["rsync", "-arq", os.path.join(src, subdir), os.path.join(dest, subdir)])
  print(f"Synced: {subdir}")
 
 if __name__ == "__main__": 
