@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+#241219
+
+
+import subprocess
+from multiprocessing import Pool
+import os
+
+src = os.path.join(os.path.expanduser("~"), "data/prod/")
+dest = os.path.join(os.path.expanduser("~"), "data/prod_backup/")
+
+def sync_folder(subdir):
+ subprocess.call(["rsync", "-arq",os.path.join(src, subdir), o$
+ print(f"Synced: {subdir}")
+
+if __name__ == "__main__": 
+ subdirs = next(os.walk(src))[1]
+ p = Pool(len(subdirs))
+ p.map(sync_folder, subdirs)
